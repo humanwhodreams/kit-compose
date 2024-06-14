@@ -21,7 +21,7 @@ const connects = [
 export function SiteHeader() {
   return (
     <header className="sticky inset-x-0 top-0 w-full border-b bg-background">
-      <nav className="flex items-center justify-between px-4 py-2 md:px-6 lg:px-8">
+      <nav className="flex items-center justify-between px-4 py-2 md:px-6 lg:px-8 xl:px-12 2xl:px-24">
         <div className="flex items-center space-x-4">
           <Link href={"/"} className="flex items-center">
             <Logo>

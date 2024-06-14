@@ -1,20 +1,16 @@
 "use client";
 
-import {
-  PiDiamondsFourDuotone,
-  PiPaintBucketDuotone,
-  PiSealCheckDuotone,
-} from "react-icons/pi";
+import { PiDiamondsFourDuotone, PiSealCheckDuotone } from "react-icons/pi";
 
 import { Button } from "./ui/button";
 import Link from "next/link";
 
 const tools = [
-  {
-    label: "Theme generator",
-    href: "/tools/theme-generator",
-    icon: PiPaintBucketDuotone,
-  },
+  // {
+  //   label: "Theme generator",
+  //   href: "/tools/theme-generator",
+  //   icon: PiPaintBucketDuotone,
+  // },
   {
     label: "Contrast checker",
     href: "/tools/contrast-checker",
@@ -33,7 +29,7 @@ export function SiteHeaderNavigation() {
       {tools.map((tool, index) => {
         return (
           <li key={index}>
-            <Button variant={"ghost"} className="text-base" asChild>
+            <Button variant={"link"} className="text-base" asChild>
               <Link href={tool.href}>
                 <tool.icon className="mr-2 text-lg" />
                 {tool.label}
