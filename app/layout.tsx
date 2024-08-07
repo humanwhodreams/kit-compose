@@ -1,31 +1,29 @@
-import "./globals.css";
+import "@/styles/globals.css";
 
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
-import Providers from "./providers";
-import { SiteHeader } from "@/components/site-header";
-import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
+import { cn } from "@/lib/cn";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "urgbi | Generate themes for your apps",
-  description: "Generate themes for your apps.",
+  title:
+    "Kit Compose | A collection of beautiful components for your React app.",
+  description: "A collection of beautiful components for your React app.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
+export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("antialiased", inter.className)}>
-        <Providers>
-          <SiteHeader />
-          {children}
-        </Providers>
-      </body>
+      <body className={cn("antialiased", inter.className)}>{children}</body>
     </html>
   );
 }
